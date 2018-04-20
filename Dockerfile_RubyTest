@@ -1,0 +1,12 @@
+FROM ruby
+
+WORKDIR /usr/src/app
+
+RUN apt-get update && apt-get install jq -y
+
+RUN gem install watir
+
+COPY wait-for-grid.sh .
+
+RUN chmod +x wait-for-grid.sh
+
